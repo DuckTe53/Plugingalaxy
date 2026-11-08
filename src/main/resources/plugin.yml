@@ -1,0 +1,4 @@
+name: GalaxyStats
+version: 1.0
+main: com.galaxy.stats.GalaxyStats
+api-version: '1.21'

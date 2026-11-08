@@ -1,0 +1,3 @@
+firebase-url: "https://umbreon-chat-default-rtdb.firebaseio.com"
+firebase-secret: "BURAYA_SECRET"
+interval-minutes: 5
