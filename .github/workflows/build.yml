@@ -1,0 +1,29 @@
+name: Build GalaxyStats
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kodu indir
+        uses: actions/checkout@v4
+
+      - name: Java 21 kur
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Derle
+        run: mvn -B package
+
+      - name: Jar'ı artifact olarak yükle
+        uses: actions/upload-artifact@v4
+        with:
+          name: GalaxyStats
+          path: target/GalaxyStats-1.0.jar
